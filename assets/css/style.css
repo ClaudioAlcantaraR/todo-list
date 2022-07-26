@@ -1,0 +1,83 @@
+:root {
+
+    /* Colors */
+    --text-color: rgba(255, 255, 255, 0.90);
+    --main-bg: rgba(0, 0, 0, 0.92);
+
+    /* Table */
+    --table-border: rgba(255, 255, 255, 0.13);
+    --thead-tr-color: rgba(255, 255, 255, 0.62);
+    --thead-th-font-weight: 400;
+    --tbody-tr-color: rgba(255, 255, 255, 0.95);
+    --tbody-td-font-weight: 300;
+
+    /* Card */
+    --card-bg-color: transparent;
+    /* Shadows */
+
+    /* Fonts */
+    --font-family: "Roboto";
+}
+
+body {
+    font-family: var(--font-family);
+    font-weight: normal;
+    color: var(--text-color);
+    background-color: var(--main-bg);
+}
+
+thead tr {
+    color: var(--thead-tr-color);
+}
+
+thead tr th {
+    font-weight: var(--thead-th-font-weight);
+}
+
+tbody tr {
+    color: var(--tbody-tr-color);
+}
+
+tbody tr td {
+    font-weight: var(--tbody-td-font-weight);
+}
+
+table {
+    
+    border-color: var(--table-border);
+}
+
+.table {
+    color: var(--text-color);
+    border-color: var(--table-border);
+}
+
+.card {
+    background-color: var(--card-bg-color);
+}
+
+.btn-light {
+    color: var(--text-color);
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.btn-light:hover {
+    color: var(--text-color);
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.actions-btn .btn-light {
+    color: var(--text-color);
+    background-color: transparent;
+    border: 0;
+}
+
+.actions-btn .btn-light:hover {
+    color: var(--text-color);
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 0;
+}
+
+
