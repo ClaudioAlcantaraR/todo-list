@@ -23,6 +23,13 @@
                     <div class="form-group mb-3">
                         <textarea name="description" rows="2" class="form-control" placeholder="Descripción (opcional)"></textarea>
                     </div>
+                    <!-- <div class="form-group mb-3">
+                        <select class="form-select" name="priority">
+                            <option selected>Baja</option>
+                            <option value="1">Media</option>
+                            <option value="2">Alta</option>
+                        </select>
+                    </div> -->
                     <div class="d-grid gap-2">
                         <input type="submit" class="btn btn-light btn-block text-uppercase" name="save-task" value="añadir">
                     </div>
@@ -33,6 +40,7 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
+                        <th>Prioridad</th>
                         <th>Título</th>
                         <th>Descripción</th>
                         <th>Fecha</th>
@@ -48,6 +56,7 @@
                         while ($row = mysqli_fetch_array($result_task)) { ?>
                             
                             <tr>
+                                <td><?= $row['priority']?></td>
                                 <td><?= $row['title']?></td>
                                 <td><?= $row['description']?></td>
                                 <td><?= $row['created_at']?></td>
