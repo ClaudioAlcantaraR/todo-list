@@ -3,7 +3,7 @@
 
 <div class="container p-4">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-lg-4 col-sm-12">
 
             <!-- Notificacion de mensaje guardado -->
             <?php
@@ -29,7 +29,7 @@
                 </form>
             </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-lg-8 col-sm-12">
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -41,16 +41,16 @@
                 </thead>
                 <tbody>
                     <?php
-                        $query = "SELECT * FROM task"; //Seleccionamos todos los datos
-                        $result_task = mysqli_query($connectionDB, $query); //La variable contiene todas las tareas guardadas.
-
+                        //Seleccionamos todos los datos
+                        $query = "SELECT * FROM task"; 
+                        //La variable contiene todas las tareas guardadas.
+                        $result_task = mysqli_query($connectionDB, $query);
                         while ($row = mysqli_fetch_array($result_task)) { ?>
                             
-                            <tr> <!-- IMPORTANTE: Los nombres deben ser identicos a los de la base de datos -->
+                            <tr>
                                 <td><?= $row['title']?></td>
                                 <td><?= $row['description']?></td>
                                 <td><?= $row['created_at']?></td>
-
                                 <td class="text-center actions-btn">
                                     <a class="btn btn-light" href="edit-task.php?id=<?= $row['id']?>"><i class="fas fa-pen"></i></a>
                                     <a class="btn btn-light" href="delete-task.php?id=<?= $row['id']?>"><i class="fas fa-trash-alt"></i></a>

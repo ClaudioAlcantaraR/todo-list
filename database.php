@@ -8,7 +8,7 @@ session_start();
  */
 $host = 'localhost';
 $userDB = 'root';
-$passwordDB = 'admin';
+$passwordDB = '';
 $nameDB = 'crud-task';
 
 $connectionDB = mysqli_connect($host, $userDB, $passwordDB, $nameDB);
