@@ -1,18 +1,27 @@
 :root {
 
     /* Colors */
-    --text-color: rgba(255, 255, 255, 0.90);
-    --main-bg: rgba(0, 0, 0, 0.92);
+    --primary-text-color: rgba(255, 255, 255, 0.95);
+    --secundary-text-color: rgba(255, 255, 255, 0.7);
+    --main-bg: #121212;
 
     /* Table */
-    --table-border: rgba(255, 255, 255, 0.13);
-    --thead-tr-color: rgba(255, 255, 255, 0.62);
+    --divider-border: rgba(255, 255, 255, 0.12);
+    --thead-tr-color: rgba(255, 255, 255, 0.7);
     --thead-th-font-weight: 400;
     --tbody-tr-color: rgba(255, 255, 255, 0.95);
     --tbody-td-font-weight: 300;
 
     /* Card */
     --card-bg-color: transparent;
+
+    /* Inputs */
+    --bg-input-color: rgba(255, 255, 255, 0.16);
+
+    /* Buttons */
+    --btn-light-hover-bg: rgba(255, 255, 255, 0.12);
+    --btn-light-border-color: rgba(255, 255, 255, 0.12);
+
     /* Shadows */
 
     /* Fonts */
@@ -22,7 +31,7 @@
 body {
     font-family: var(--font-family);
     font-weight: normal;
-    color: var(--text-color);
+    color: var(--primary-text-color);
     background-color: var(--main-bg);
 }
 
@@ -43,13 +52,12 @@ tbody tr td {
 }
 
 table {
-    
-    border-color: var(--table-border);
+    border-color: var(--divider-border);
 }
 
 .table {
-    color: var(--text-color);
-    border-color: var(--table-border);
+    color: var(--primary-text-color);
+    border-color: var(--divider-border);
 }
 
 .card {
@@ -57,27 +65,72 @@ table {
 }
 
 .btn-light {
-    color: var(--text-color);
+    color: var(--primary-text-color);
     background-color: transparent;
-    border-color: rgba(255, 255, 255, 0.12);
+    border-color: var(--btn-light-border-color);
 }
 
 .btn-light:hover {
-    color: var(--text-color);
-    background-color: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.12);
+    color: var(--primary-text-color);
+    background-color: var(--btn-light-hover-bg);
+    border-color: var(--btn-light-border-color);
 }
 
 .actions-btn .btn-light {
-    color: var(--text-color);
+    color: var(--primary-text-color);
     background-color: transparent;
     border: 0;
 }
 
 .actions-btn .btn-light:hover {
-    color: var(--text-color);
-    background-color: rgba(255, 255, 255, 0.12);
+    color: var(--primary-text-color);
+    background-color: var(--btn-light-hover-bg);
     border: 0;
 }
 
+.form-control {
+    background-color: var(--bg-input-color);
+    border-color: var(--divider-border);
+    color: var(--primary-text-color);
+}
 
+.form-control:focus {
+    color: var(--primary-text-color);
+    background-color: var(--bg-input-color);
+}
+
+.form-control::placeholder {
+    color: var(--secundary-text-color);
+}
+
+#alert {
+    margin-top: 1rem;
+    margin-right: 1rem;
+    position: absolute;
+    top: 0;
+    margin-left: auto;
+    left: 0;
+    right: 0;
+    width: 20%;
+}
+
+.stroke-line td:nth-child(1), .stroke-line td:nth-child(2) {
+    text-decoration: line-through;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.empty-task-msg {
+    /* Reducir tamaño en mobile */
+}
+
+/* Breakpoints */
+
+@media (min-width: 1400px) {
+    .container,
+    .container-lg,
+    .container-md,
+    .container-xl,
+    .container-xxl {
+        max-width: 1600px;
+    }
+}

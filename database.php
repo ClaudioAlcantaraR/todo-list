@@ -8,7 +8,7 @@ session_start();
  */
 $host = 'localhost';
 $userDB = 'root';
-$passwordDB = 'admin';
+$passwordDB = '';
 $nameDB = 'crud-task';
 
 $connectionDB = mysqli_connect($host, $userDB, $passwordDB, $nameDB);
@@ -29,6 +29,9 @@ $connectionDB = mysqli_connect($host, $userDB, $passwordDB, $nameDB);
 /**
  * Creación de la base de datos y tabla
  */
+
+/*TODO:  ALTER TABLE `task` ADD `priority` CHAR(10) NOT NULL AFTER `created_at`; */
+
 $sql = array();
 
 $sql[] = "CREATE DATABASE IF NOT EXISTS `crud-task` COLLATE utf8mb4_general_ci";

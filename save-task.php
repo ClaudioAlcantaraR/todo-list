@@ -5,12 +5,11 @@ include ("database.php");
     if (isset($_POST["save-task"])) {
         $title = $_POST['title'];
         $description = $_POST['description'];
-        // Insertamos los datos en la tabla creada en php my admin
         $query = "INSERT INTO task(title, description) VALUES ('$title', '$description')";
         $result = mysqli_query($connectionDB, $query);
 
         if (!$result) {
-            die("Query Failed en añadir tarea");
+            die("Query Failed");
         }
 
         //Añadimos notificacion de guardado
