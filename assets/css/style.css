@@ -103,13 +103,27 @@ table {
     color: var(--secundary-text-color);
 }
 
+#alert {
+    margin-top: 1rem;
+    margin-right: 1rem;
+    position: absolute;
+    top: 0;
+    margin-left: auto;
+    left: 0;
+    right: 0;
+    width: 20%;
+}
+
+.empty-task-msg {
+    /* Reducir tamaño en mobile */
+}
+
 /* Breakpoints */
 
 @media (min-width: 1400px) {
     .container,
     .container-lg,
     .container-md,
-    .container-sm,
     .container-xl,
     .container-xxl {
         max-width: 1600px;

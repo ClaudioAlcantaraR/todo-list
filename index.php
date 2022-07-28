@@ -1,20 +1,21 @@
 <?php include("database.php")?>
 <?php include("./sections/header.php")?>
 
+<div class="container-sm container-relative">
+<!-- Notificacion de mensaje guardado -->
+<?php
+    if (isset($_SESSION['message'])) {?>
+    <div id="alert" class="alert alert-<?= $_SESSION['message_type']; ?> alert-dismissible fade show" role="alert">
+        <?= $_SESSION['message'] ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+        <!-- Limpiamos los datos que tenemos en sesion  -->
+    <?php session_unset(); }?>
+</div>
 <div class="container p-4">
+     
     <div class="row">
         <div class="col-lg-4 col-sm-12">
-
-            <!-- Notificacion de mensaje guardado -->
-            <?php
-            if (isset($_SESSION['message'])) {?>
-            <div class="alert alert-<?= $_SESSION['message_type']; ?> alert-dismissible fade show" role="alert">
-                <?= $_SESSION['message'] ?>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            <!-- Limpiamos los datos que tenemos en sesion  -->
-            <?php session_unset(); }?>
-
             <div class="card card-body">
                 <form action="save-task.php" method="post">
                     <div class="form-group mb-3">
@@ -37,14 +38,14 @@
             </div>
         </div>
         <div class="col-lg-8 col-sm-12">
-            <table class="table table-bordered">
+            <table id="task-table" class="table table-bordered">
                 <thead>
                     <tr>
                         <th>Prioridad</th>
                         <th>Título</th>
                         <th>Descripción</th>
                         <th>Fecha</th>
-                        <th>Acciones</th>
+                        <th>Editar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,7 +66,7 @@
                                     <a class="btn btn-light" href="delete-task.php?id=<?= $row['id']?>"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>
-                        <?php } ?>
+                        <?php }?>
                 </tbody>
             </table>
         </div>
