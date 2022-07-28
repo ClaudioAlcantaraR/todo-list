@@ -13,8 +13,6 @@ $nameDB = 'crud-task';
 
 $connectionDB = mysqli_connect($host, $userDB, $passwordDB, $nameDB);
 
-/* TODO: Debemos crear un condicional para poder añadir el nombre de la base de datos en la conexion. Ya que si queremos queremos que la conexcion lea la base de datos esta debe existir antes. */
-
 /**
  * Descomentar estas lineas si desea ver los errores de conexion
  */
@@ -30,9 +28,7 @@ $connectionDB = mysqli_connect($host, $userDB, $passwordDB, $nameDB);
  * Creación de la base de datos y tabla
  */
 
-/*TODO:  ALTER TABLE `task` ADD `priority` CHAR(10) NOT NULL AFTER `created_at`; */
-
-$sql = array();
+/* $sql = array();
 
 $sql[] = "CREATE DATABASE IF NOT EXISTS `crud-task` COLLATE utf8mb4_general_ci";
 
@@ -48,7 +44,7 @@ foreach($sql as $query)
   if($connectionDB->query($query) == false) {
     return false;
   }
-}
+} */
 
 /* mysqli_close($connectionDB); */
 

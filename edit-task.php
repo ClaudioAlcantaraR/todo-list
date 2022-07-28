@@ -3,14 +3,14 @@ include("database.php");
 
  if (isset($_GET['id'])) {
      $id = $_GET['id'];
-     $query = "SELECT * FROM task WHERE id = $id";
+     $query = "SELECT * FROM task WHERE `task`.`id` = $id";
      $result = mysqli_query($connectionDB, $query);
 
-     if (mysqli_num_rows($result) == 1) {
+    if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_array($result);
         $title = $row['title'];
         $description = $row['description'];
-     }
+    }
  }
 
  if (isset($_POST['update'])) {
@@ -20,7 +20,7 @@ include("database.php");
 
     //Ejecutamos la consulta
 
-    $query = "UPDATE task set title = '$title', description = '$description' WHERE id = $id";
+    $query = "UPDATE `task` set `title` = '$title', `description` = '$description' WHERE `task`.`id` = $id";
     mysqli_query($connectionDB, $query);
 
     //Añadimos la notificacion de guardado

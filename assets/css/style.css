@@ -114,9 +114,13 @@ table {
     width: 20%;
 }
 
-.stroke-line td:nth-child(1), .stroke-line td:nth-child(2) {
+.stroke-line td:nth-child(1), .stroke-line td:nth-child(2), .stroke-line td:nth-child(3) {
     text-decoration: line-through;
     color: rgba(255, 255, 255, 0.6);
+}
+
+.stroke-line td {
+    background: rgba(255, 255, 255, 0.06);
 }
 
 .empty-task-msg {
