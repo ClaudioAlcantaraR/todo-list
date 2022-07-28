@@ -122,6 +122,23 @@ table {
 .stroke-line td {
     background: rgba(255, 255, 255, 0.06);
 }
+.page-link {
+    color: var(--primary-text-color);
+    background: transparent;
+    border-color: var(--btn-light-border-color);
+}
+
+.page-link:hover {
+    background-color: var(--btn-light-hover-bg);
+    color: var(--primary-text-color);
+    border-color: var(--btn-light-border-color);
+}
+
+.page-item.disabled .page-link {
+    color: var(--secundary-text-color);
+    background-color: #333333;
+    border-color: var(--btn-light-border-color);
+}
 
 .empty-task-msg {
     /* Reducir tamaño en mobile */

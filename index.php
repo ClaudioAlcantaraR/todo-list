@@ -13,7 +13,6 @@
     <?php session_unset(); }?>
 </div>
 <div class="container p-4">
-
     <div class="row">
         <div class="col-lg-4 col-sm-12">
             <div class="card card-body">
@@ -25,16 +24,8 @@
                         <textarea name="description" rows="2" class="form-control"
                             placeholder="Descripción (opcional)"></textarea>
                     </div>
-                    <!-- <div class="form-group mb-3">
-                        <select class="form-select" name="priority">
-                            <option selected>Baja</option>
-                            <option value="1">Media</option>
-                            <option value="2">Alta</option>
-                        </select>
-                    </div> -->
                     <div class="d-grid gap-2">
-                        <input type="submit" class="btn btn-light btn-block text-uppercase" name="save-task"
-                            value="añadir">
+                        <input type="submit" class="btn btn-light btn-block text-uppercase" name="save-task" value="añadir">
                     </div>
                 </form>
             </div>
@@ -56,15 +47,16 @@
                         //La variable contiene todas las tareas guardadas.
                         $result_task = mysqli_query($connectionDB, $query);
                         while ($row = mysqli_fetch_array($result_task)) { ?>
-                    <tr>
-                        <td><?= $row['title']?></td>
-                        <td><?= $row['description']?></td>
-                        <td><?= $row['created_at']?></td>
+
+                    <tr id="delete<?= $row['id']; ?>">
+                        <td><?= $row['title'];?></td>
+                        <td><?= $row['description'];?></td>
+                        <td><?= $row['created_at'];?></td>
                         <td class="text-center actions-btn">
-                            <a class="btn btn-light" href="edit-task.php?id=<?= $row['id']?>"><i
+                            <a class="btn btn-light" href="edit-task.php?id=<?= $row['id'];?>"><i
                                     class="fas fa-pen"></i></a>
-                            <a class="btn btn-light" href="delete-task.php?id=<?= $row['id']?>"><i
-                                    class="fas fa-trash-alt"></i></a>
+                            <button onclick = "deleteAjax(<?= $row['id']; ?>)" class="btn btn-light"><i
+                                    class="fas fa-trash-alt"></i></button>
                         </td>
                     </tr>
                     <?php }?>
@@ -74,5 +66,20 @@
     </div>
 </div>
 
+<script>
+
+function deleteAjax(id) {
+  $.ajax({
+    type: 'POST',
+    url: 'delete-task.php',
+    data: {
+      delete_id: id
+    },
+    success: function (data) {
+      $('#delete' + id).hide();
+    }
+  });
+}
+</script>
 
 <?php include("./sections/footer.php")?>

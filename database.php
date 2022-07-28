@@ -6,9 +6,9 @@ session_start();
  * Variables de loggeo
  * Reemplazar por acceso a tu base de datos
  */
-$host = 'localhost';
+$host = 'localhost:3325';
 $userDB = 'root';
-$passwordDB = '';
+$passwordDB = 'root';
 $nameDB = 'crud-task';
 
 $connectionDB = mysqli_connect($host, $userDB, $passwordDB, $nameDB);
