@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col-lg-4 col-sm-12">
             <div class="card card-body">
-                <form action="save-task.php" method="post">
+                <form action="save-task.php" method="POST">
                     <div class="form-group mb-3">
                         <input type="text" name="title" class="form-control" placeholder="Tarea" autofocus required>
                     </div>
