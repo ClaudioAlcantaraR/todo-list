@@ -114,6 +114,11 @@ table {
     width: 20%;
 }
 
+.stroke-line td:nth-child(1), .stroke-line td:nth-child(2) {
+    text-decoration: line-through;
+    color: rgba(255, 255, 255, 0.6);
+}
+
 .empty-task-msg {
     /* Reducir tamaño en mobile */
 }
