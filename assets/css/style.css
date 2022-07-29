@@ -147,10 +147,6 @@ table.dataTable>tbody>tr.selected>* {
     border-color: var(--btn-light-border-color);
 }
 
-.empty-task-msg {
-    /* Reducir tamaño en mobile */
-}
-
 /* Breakpoints */
 
 @media (min-width: 1400px) {
