@@ -5,7 +5,8 @@ include ("database.php");
     if (isset($_POST["save-task"])) {
         $title = $_POST['title'];
         $description = $_POST['description'];
-        $query = "INSERT INTO `task` (`title`, `description`) VALUES ('$title', '$description')";
+        $priority = $_POST['priority'];
+        $query = "INSERT INTO `task` (`title`, `description`, `priority`) VALUES ('$title', '$description', '$priority')";
         $result = mysqli_query($connectionDB, $query);
 
         if (!$result) {

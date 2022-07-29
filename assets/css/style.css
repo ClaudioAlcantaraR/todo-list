@@ -103,6 +103,17 @@ table {
     color: var(--secundary-text-color);
 }
 
+.form-select {
+    background-color: var(--bg-input-color);
+    color: var(--secundary-text-color);
+    border-color: var(--divider-border);
+}
+
+.form-select option {
+    color: var(--secundary-text-color);
+    background-color: #383838;
+}
+
 #alert {
     margin-top: 1rem;
     margin-right: 1rem;
@@ -114,14 +125,10 @@ table {
     width: 20%;
 }
 
-.stroke-line td:nth-child(1), .stroke-line td:nth-child(2), .stroke-line td:nth-child(3) {
-    text-decoration: line-through;
-    color: rgba(255, 255, 255, 0.6);
+table.dataTable>tbody>tr.selected>* {
+    box-shadow: inset 0 0 0 9999px rgb(37 37 37 / 90%);
 }
 
-.stroke-line td {
-    background: rgba(255, 255, 255, 0.06);
-}
 .page-link {
     color: var(--primary-text-color);
     background: transparent;
