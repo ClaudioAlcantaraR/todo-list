@@ -1,6 +1,9 @@
 $(document).ready(function () {
   /* Datatable */
   $('#task-table').dataTable({
+    select: {
+      style: 'multi'
+    },
     "language": {
       "emptyTable": "Tu lista esta vacía. Añade una tarea 😁",
       "search": "Buscar",
@@ -9,17 +12,16 @@ $(document).ready(function () {
       "paginate": {
         "next": "Siguiente",
         "previous": "Anterior"
+      },
+      select: {
+        rows: "%d tareas marcadas"
       }
     },
-    "lengthChange": false
-  });
-  /*Tachando las filas cuando son clicadas */
-  $('#task-table tbody').on('click', 'tr', function () {
-    $(this).toggleClass('stroke-line ');
-  });
-
-  $('#button').click(function () {
-    alert(table.rows('.stroke-line').data().length + ' row(s) selected');
+    "lengthChange": false,
+    dom: 'Bfrtip',
+    buttons: [
+      'excel', 'pdf', 'print'
+    ]
   });
   /* Notificación alerta */
   $(".alert").delay(1000).slideUp(200, function () {
