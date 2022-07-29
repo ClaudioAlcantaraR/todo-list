@@ -18,5 +18,6 @@ The database is attached, you can download it or create it.
 
 Be sure to change the parameters to create a successful connection to your database server.
 
+<strong>Preview:</strong>
 
 ![](TodoList.png)
