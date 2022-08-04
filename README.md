@@ -16,7 +16,7 @@ It is also possible to paginate, export the tasks in pdf, excel and print them t
 
 The database is attached, you can download it or create it.
 
-Be sure to change the parameters to create a successful connection to your database server.
+Make sure to change the parameters in the database file php to create a successful connection to your database server.
 
 <strong>Preview:</strong>
 
